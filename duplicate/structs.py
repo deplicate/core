@@ -102,14 +102,14 @@ class DupInfo(_DupInfo):
         return inst
 
     def __init__(self, *args, **kwargs):
-        super(DupInfo, self).__init__(*args, **kwargs)
+        super(DupInfo, self).__init__()
         self._filter()
 
     def _filter(self, delkey=None):
         dupdict = self.dups
 
         if delkey is None:
-            for key, value in dupdict.items():
+            for key, value in list(dupdict.items()):
                 if len(value) > 1:
                     continue
                 dupdict.pop(key)
