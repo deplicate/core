@@ -33,7 +33,7 @@ CACHE = Cache()
 
 
 def _iterdups(dupinfo):
-    for key, value in dupinfo.dups.items():
+    for key, value in list(dupinfo.dups.items()):
         if isinstance(value, DupInfo):
             for subobj, subkey, subvalue in _iterdups(value):
                 yield subobj, subkey, subvalue
