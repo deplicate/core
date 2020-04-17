@@ -4,7 +4,7 @@ from __future__ import absolute_import
 
 import codecs
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='deplicate',
@@ -43,7 +43,7 @@ setup(
         'Topic :: System :: Filesystems',
         'Topic :: Utilities'],
     platforms=['any'],
-    packages=['duplicate'],
+    packages=find_packages(),
     include_package_data=True,
     install_requires=[
         'directio;os_name!="nt"',
