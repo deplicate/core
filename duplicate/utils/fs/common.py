@@ -118,7 +118,7 @@ def _scandir(path, onerror, followlinks):
             if entry.is_file(follow_symlinks=False):
                 files.append(entry)
 
-            elif entry.is_dir(followlinks):
+            elif entry.is_dir(follow_symlinks=followlinks):
                 dirs.append(entry)
 
             elif entry.is_file():
